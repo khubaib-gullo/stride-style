@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stride & Style | Premium Footwear</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Manrope', 'sans-serif'],
+              display: ['Syne', 'sans-serif'],
+            },
+            colors: {
+              primary: '#D97757', // Terra Cotta / Clay
+              primaryHover: '#C06042',
+              secondary: '#2C3E50', // Deep Blue Grey
+              dark: '#1C1917', // Warm Black
+              surface: '#FFFFFF', // Pure White
+              background: '#FAF7F5', // Warm Beige/Bone
+              muted: '#A8A29E',
+            },
+            animation: {
+              'spin-slow': 'spin 8s linear infinite',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Manrope', sans-serif;
+        background-color: #FAF7F5;
+        color: #1C1917;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Syne', sans-serif;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      .arch-image {
+        border-radius: 150px 150px 0 0;
+      }
+      .pill-shape {
+        border-radius: 9999px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
