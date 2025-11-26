@@ -16,7 +16,7 @@ export const FEATURED_COLLECTIONS: Collection[] = [
 		id: 1,
 		title: "Technical Run",
 		subtitle: "Performance First",
-		image: "image/img1.jpg",
+		image: "image/img4.jpg",
 	},
 	{
 		id: 2,
