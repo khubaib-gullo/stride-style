@@ -1,88 +1,63 @@
 import React from 'react';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight, PlayCircle } from 'lucide-react';
 import { HERO_SLIDES } from '../constants';
 
-interface HeroProps {
-  onOpenSidebar: () => void;
-}
-
-const Hero: React.FC<HeroProps> = ({ onOpenSidebar }) => {
+const Hero: React.FC = () => {
   const slide = HERO_SLIDES[0];
 
   return (
-    <div className="relative w-full min-h-screen pt-24 pb-12 px-4 md:px-8 bg-background flex items-center overflow-hidden">
+    <div className="relative w-full h-screen min-h-[600px] bg-primary overflow-hidden">
       
-      {/* Decorative Background Elements */}
-      <div className="absolute top-20 left-10 w-4 h-4 bg-primary rounded-full opacity-20 animate-pulse"></div>
-      <div className="absolute top-40 right-20 w-8 h-8 text-primary/30 rotate-12">
-        <Star className="w-full h-full fill-current" />
+      {/* Background Media */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={slide.bgImage} 
+          alt="Hero Background" 
+          className="w-full h-full object-cover object-center opacity-80"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
       </div>
-      <div className="absolute bottom-20 left-1/4 w-6 h-6 border-2 border-dark/20 rounded-full"></div>
 
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-        
-        {/* Left Content */}
-        <div className="flex flex-col items-start space-y-8 order-2 lg:order-1">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-gray-100">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-xs font-bold uppercase tracking-wider text-dark">New Collection 2025</span>
+      {/* Content */}
+      <div className="absolute inset-0 z-10 flex flex-col justify-end pb-24 px-6 md:px-12 max-w-[1440px] mx-auto">
+        <div className="max-w-3xl animate-slide-in">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="px-3 py-1 bg-white text-black text-xs font-bold tracking-widest uppercase">
+              New Drop
+            </span>
+            <span className="text-white/80 text-xs font-medium tracking-wide uppercase">
+              Limited Edition
+            </span>
           </div>
-
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-display font-extrabold text-dark leading-[0.9] tracking-tight">
-            WALK <br/>
-            WITH <br/>
-            <span className="text-primary italic">PURPOSE</span>
+          
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-white leading-[0.9] tracking-tighter mb-6">
+            {slide.title}
           </h1>
 
-          <p className="text-lg text-gray-600 max-w-md font-medium leading-relaxed">
+          <p className="text-gray-300 text-lg md:text-xl max-w-xl font-medium leading-relaxed mb-10">
             {slide.description}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <button className="bg-dark text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-primary transition-colors duration-300 flex items-center gap-3 group shadow-lg">
-              Shop Now
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <div className="flex flex-col sm:flex-row gap-4">
+            <button className="bg-white text-black px-8 py-4 font-bold text-sm uppercase tracking-widest hover:bg-gray-200 transition-colors flex items-center justify-center gap-3">
+              Shop Men <ArrowRight className="w-4 h-4" />
             </button>
-            <button className="px-10 py-5 rounded-full font-bold text-lg border-2 border-dark text-dark hover:bg-white transition-colors duration-300">
-              View Lookbook
+            <button className="bg-transparent border border-white text-white px-8 py-4 font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-3">
+              Shop Women
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Right Image (Arch) */}
-        <div className="relative order-1 lg:order-2 flex justify-center">
-          {/* Sticker Badge */}
-          <div className="absolute -top-10 -right-4 md:right-10 z-20 animate-spin-slow">
-            <div className="w-32 h-32 rounded-full bg-primary flex items-center justify-center relative">
-              <svg className="w-full h-full absolute inset-0 text-white" viewBox="0 0 100 100" width="100" height="100">
-                <defs>
-                  <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
-                </defs>
-                <text fontSize="11">
-                  <textPath xlinkHref="#circle" className="uppercase font-bold tracking-widest fill-current">
-                    • Premium Quality • Since 2024
-                  </textPath>
-                </text>
-              </svg>
-              <span className="font-display font-black text-2xl text-white">100%</span>
-            </div>
-          </div>
-
-          <div className="relative w-full max-w-md aspect-[3/4]">
-             {/* Outline Stroke Arch */}
-            <div className="absolute inset-0 border-2 border-dark rounded-t-[200px] transform translate-x-4 translate-y-4"></div>
-            
-            {/* Main Image Arch */}
-            <div className="absolute inset-0 bg-gray-200 rounded-t-[200px] overflow-hidden shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2000&auto=format&fit=crop" 
-                alt="Hero Fashion" 
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-          </div>
+      {/* Video Trigger (Visual Only) */}
+      <div className="absolute bottom-12 right-6 md:right-12 z-20 hidden md:flex items-center gap-3 cursor-pointer group">
+        <div className="text-right">
+           <p className="text-white font-bold text-xs uppercase tracking-widest">Watch Film</p>
+           <p className="text-gray-400 text-[10px]">01:45</p>
         </div>
-
+        <button className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center bg-white/10 backdrop-blur-sm group-hover:scale-110 transition-transform">
+          <PlayCircle className="w-6 h-6 text-white" />
+        </button>
       </div>
     </div>
   );

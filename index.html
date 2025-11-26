@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stride & Style | Premium Footwear</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
@@ -15,16 +15,27 @@
               display: ['Syne', 'sans-serif'],
             },
             colors: {
-              primary: '#D97757', // Terra Cotta / Clay
-              primaryHover: '#C06042',
-              secondary: '#2C3E50', // Deep Blue Grey
-              dark: '#1C1917', // Warm Black
+              primary: '#000000', // Pure Black
+              secondary: '#333333', // Dark Gray
+              accent: '#2563EB', // International Blue (Subtle Accent)
               surface: '#FFFFFF', // Pure White
-              background: '#FAF7F5', // Warm Beige/Bone
-              muted: '#A8A29E',
+              background: '#FFFFFF', // White
+              light: '#F5F5F5', // Light Gray for cards
+              border: '#E5E5E5',
             },
             animation: {
-              'spin-slow': 'spin 8s linear infinite',
+              'fade-in': 'fadeIn 0.5s ease-out',
+              'slide-in': 'slideIn 0.3s ease-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideIn: {
+                '0%': { transform: 'translateX(100%)' },
+                '100%': { transform: 'translateX(0)' },
+              }
             }
           }
         }
@@ -33,8 +44,9 @@
     <style>
       body {
         font-family: 'Manrope', sans-serif;
-        background-color: #FAF7F5;
-        color: #1C1917;
+        background-color: #FFFFFF;
+        color: #000000;
+        -webkit-font-smoothing: antialiased;
       }
       h1, h2, h3, h4, h5, h6 {
         font-family: 'Syne', sans-serif;
@@ -45,12 +57,6 @@
       .scrollbar-hide {
           -ms-overflow-style: none;
           scrollbar-width: none;
-      }
-      .arch-image {
-        border-radius: 150px 150px 0 0;
-      }
-      .pill-shape {
-        border-radius: 9999px;
       }
     </style>
   <script type="importmap">
