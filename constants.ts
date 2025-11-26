@@ -16,8 +16,7 @@ export const FEATURED_COLLECTIONS: Collection[] = [
 		id: 1,
 		title: "Technical Run",
 		subtitle: "Performance First",
-		image:
-			"https://images.unsplash.com/photo-1518002171953-a080ee32bed2?q=80&w=1000&auto=format&fit=crop",
+		image: "image/img1.jpg",
 	},
 	{
 		id: 2,
